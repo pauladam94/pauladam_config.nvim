@@ -1,9 +1,34 @@
-
 [[language]]
 name = "typst"
-# auto-format = true
+auto-format = true
 formatter.command = "typstyle"
 language-servers = ["tinymist"]
-
 [language-server.tinymist]
 command = "tinymist"
+display-inlay-hints = false
+
+
+[[language]]
+name = "rust"
+[language-server.rust-analyzer]
+display-inlay-hints = true
+
+
+[[language]]
+name = "lua"
+language-servers = ["emmylua_ls"]
+[language-server.emmylua_ls]
+command = "emmylua_ls"
+auto-format = true
+
+
+[[language]]
+name = "lustre"
+scope = "source.lus"
+file-types = ["lus"]
+language-servers = ["lustrels"]
+[language-server.lustrels]
+command = "lustrels"
+# language-servers = [{ name = "lustrels", only-features = [ "format" ] }]
+indent = { tab-width = 2, unit = "  " }
+block-comment-tokens = { start = "(*", end = "*)"}

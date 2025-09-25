@@ -1,6 +1,16 @@
-theme = "adwaita-light"
+# theme = "gruvbox-light"
+theme = "everforest_light"
 
 [editor]
+auto-save.focus-lost = true
 auto-save.after-delay.enable = true
+auto-save.after-delay.timeout = 10
 soft-wrap.enable = true
 
+[editor.lsp]
+display-inlay-hints = true
+
+
+
+[keys.normal]
+C-t = ":! typst watch %{buffer_name} --open"

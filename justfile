@@ -11,6 +11,13 @@ installs:
 	sudo dnf copr enable atim/lazygit -y
 	just install lazygit
 
+	just install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+	just install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+	just install rpmfusion-free-release-tainted
+	just install libdvdcss
+
 	just install tldr
 	just install helix
 	just install neovim
@@ -18,9 +25,12 @@ installs:
 	just install btop
 	just install ripgrep
 
-	cargo install --git https://github.com/Myriad-Dreamin/tinymist --locked tinymist
+	cargo install --force --git https://github.com/Myriad-Dreamin/tinymist --locked tinymist-cli
 	cargo install typstyle --locked
 	cargo install --git https://github.com/typst/typst --locked typst-cli
+
+	just install pip
+	# pip install tombiadd --dev tombi # marche pas
 
 configs-file: nvim kitty helix
 
