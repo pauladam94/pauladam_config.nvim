@@ -35,7 +35,7 @@ installs:
 configs-file: nvim kitty helix
 
 nvim:
-	ln -s ~/.config/nvim/init.lua ~/.config/config_paul/nvim/init.lua
+	ln -s --force ~/.config/nvim/init.lua ~/.config/config_paul/nvim/init.lua
 	- echo "Linking neovim config. DONE."
 
 kitty:

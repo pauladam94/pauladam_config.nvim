@@ -6,11 +6,14 @@ auto-save.focus-lost = true
 auto-save.after-delay.enable = true
 auto-save.after-delay.timeout = 10
 soft-wrap.enable = true
+auto-pairs = false
 
 [editor.lsp]
 display-inlay-hints = true
 
-
-
 [keys.normal]
-C-t = ":! typst watch %{buffer_name} --open"
+C-t = """\
+  :! typst w %{buffer_name} \
+  --features html \
+  /tmp/%sh{echo %{buffer_name} | rev | cut -d"/" -f1 | rev | cut -d"." -f1}.pdf \
+  --open --root ."""
